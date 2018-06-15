@@ -8,7 +8,7 @@ import { People } from '../person';
 })
 export class PersonDetailComponent implements OnInit {
   @Input() person: People;
-  
+
   constructor() { }
 
   ngOnInit() {

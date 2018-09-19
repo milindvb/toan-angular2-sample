@@ -113,8 +113,8 @@ selectNodeVersion
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   echo "test message 9999"
   cd "$DEPLOYMENT_TARGET"
-  eval $NPM_CMD install --production
-  eval $NPM_CMD install --only=dev
+  eval /opt/nodejs/8.11.2/bin/npm install --production
+  eval /opt/nodejs/8.11.2/bin/npm install --only=dev
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
 fi
@@ -122,7 +122,7 @@ fi
 # 4. Angular Prod Build
 if [ -e "$DEPLOYMENT_TARGET/angular.json" ]; then
   cd "$DEPLOYMENT_TARGET"
-  eval /opt/nodejs/8.9.4/bin/node node_modules/.bin/ng build --prod
+  eval /opt/nodejs/8.11.2/bin/node node_modules/.bin/ng build --prod
   exitWithMessageOnError "Angular build failed"
   cd - > /dev/null
 fi

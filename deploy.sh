@@ -113,8 +113,11 @@ selectNodeVersion
 if [ -e "$DEPLOYMENT_TARGET/package.json" ]; then
   echo "test message 9999"
   cd "$DEPLOYMENT_TARGET"
+  echo "test message 9998 $DEPLOYMENT_TARGET"
   eval /opt/nodejs/8.11.2/bin/npm install --production
+  echo "test message 9997 $DEPLOYMENT_TARGET"
   eval /opt/nodejs/8.11.2/bin/npm install --only=dev
+  echo "test message 9996 $DEPLOYMENT_TARGET"
   exitWithMessageOnError "npm failed"
   cd - > /dev/null
 fi
